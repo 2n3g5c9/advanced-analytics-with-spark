@@ -15,7 +15,6 @@
   </a>
 </div>
 
-
 ## Code quick access
 
 [Chapter 3 - Recommending Music and the Audioscrobbler Data Set](https://github.com/2n3g5c9/advanced-analytics-with-spark/tree/master/src/main/scala/com/datascience/recommender)
@@ -30,9 +29,9 @@ Everything is written in Scala code so make sure you have a flavor of **JDK 8** 
 
 Clone the repository:
 
-````bash
+```bash
 git clone https://github.com/2n3g5c9/advanced-analytics-with-spark
-````
+```
 
 Before running any Spark job, make sure you have downloaded the associated dataset, for example:
 
@@ -45,20 +44,21 @@ cd data/recommender
 
 Simply compile the project at the root:
 
-````bash
+```bash
 sbt compile
-````
+```
 
 Then you can run any particular class, for example:
 
-````bash
+```bash
 sbt "runMain com.datascience.recommender.RunRecommender"
-````
+```
 
 You can also package the project in a JAR file at the root:
-````bash
+
+```bash
 sbt package
-````
+```
 
 ## Tech/frameworks used
 

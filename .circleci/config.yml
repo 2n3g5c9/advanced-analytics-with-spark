@@ -1,27 +1,18 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/advanced-analytics-with-spark
     docker:
-    - image: openjdk:8
+    - image: circleci/openjdk:8-jdk
+    working_directory: ~/repo
     environment:
-      SBT_VERSION: 1.2.6
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
     steps:
-    - run: echo 'export ARTIFACT_BUILD=$CIRCLE_PROJECT_REPONAME-$CIRCLE_BUILD_NUM.zip' >> $BASH_ENV
-    - run:
-        name: Get sbt binary
-        command: |
-          apt update && apt install -y curl
-          curl -L -o sbt-$SBT_VERSION.deb https://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb
-          dpkg -i sbt-$SBT_VERSION.deb
-          rm sbt-$SBT_VERSION.deb
-          apt-get update
-          apt-get install -y sbt python-pip git
-          pip install awscli
-          apt-get clean && apt-get autoclean
     - checkout
     - restore_cache:
-        key: sbt-cache
+        keys:
+        - v1-dependencies-{{ checksum "build.sbt" }}
+        - v1-dependencies-
     - run:
         name: Download datasets
         command: |
@@ -29,18 +20,10 @@ jobs:
           ./download-data.sh
           cd ../..
     - run:
-        name: Compile advanced-analytics-with-spark dist package
-        command: cat /dev/null | sbt clean update dist
-    - store_artifacts:
-        path: target/universal/advanced-analytics-with-spark.zip
-        destination: advanced-analytics-with-spark
+        name: Checking compilation
+        command: cat /dev/null | sbt test:compile
     - save_cache:
-        key: sbt-cache
         paths:
-        - "~/.ivy2/cache"
-        - "~/.sbt"
-        - "~/.m2"
-        - deploy:
-            command: |
-              mv target/universal/advanced-analytics-with-spark.zip $CIRCLE_ARTIFACTS/$ARTIFACT_BUILD
-              aws s3 cp $CIRCLE_ARTIFACTS/$ARTIFACT_BUILD s3://advanced-analytics-with-spark.blogs/builds/ --metadata {\"git_sha1\":\"$CIRCLE_SHA1\"}
+        - ~/.m2
+        key: v1-dependencies--{{ checksum "build.sbt" }}
+#    - run: cat /dev/null | sbt test:test

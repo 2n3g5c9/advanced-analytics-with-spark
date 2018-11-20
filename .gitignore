@@ -1,2 +1,9 @@
-*.class
-*.log
+# Datasets
+*.txt
+
+# Build directories
+project/
+target/
+
+# Workspace configuration
+.idea/

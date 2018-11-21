@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-mllib" % SPARK_VERSION,
   "com.github.fommil.netlib" % "all" % "1.1.2" pomOnly()
 )
+
+fork in run := true

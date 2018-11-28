@@ -3,7 +3,7 @@
     {
       "text": "%md\n#  Chapter 3 - Recommending Music and the Audioscrobbler Data Set",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:18.302",
+      "dateUpdated": "2018-11-28 17:58:52.073",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -36,15 +36,15 @@
       "jobName": "paragraph_1543251126026_1421246791",
       "id": "20181126-165206_92803118",
       "dateCreated": "2018-11-26 16:52:06.026",
-      "dateStarted": "2018-11-28 10:07:18.504",
-      "dateFinished": "2018-11-28 10:07:18.547",
+      "dateStarted": "2018-11-28 17:58:52.203",
+      "dateFinished": "2018-11-28 17:58:52.220",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval LIMIT \u003d 100000",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:18.604",
+      "dateUpdated": "2018-11-28 17:58:52.303",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -76,15 +76,15 @@
       "jobName": "paragraph_1543346795505_-536421444",
       "id": "20181127-192635_1521740962",
       "dateCreated": "2018-11-27 19:26:35.505",
-      "dateStarted": "2018-11-28 10:07:19.062",
-      "dateFinished": "2018-11-28 10:07:20.505",
+      "dateStarted": "2018-11-28 17:58:52.512",
+      "dateFinished": "2018-11-28 17:58:54.718",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Scala imports\nAll of the required imports for Scala and Spark.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:20.574",
+      "dateUpdated": "2018-11-28 17:58:54.765",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -117,15 +117,15 @@
       "jobName": "paragraph_1543251205097_-1836348140",
       "id": "20181126-165325_118613318",
       "dateCreated": "2018-11-26 16:53:25.097",
-      "dateStarted": "2018-11-28 10:07:20.962",
-      "dateFinished": "2018-11-28 10:07:20.973",
+      "dateStarted": "2018-11-28 17:58:55.047",
+      "dateFinished": "2018-11-28 17:58:55.079",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nimport org.apache.log4j.{Level, Logger}\nimport org.apache.spark.broadcast.Broadcast\nimport org.apache.spark.ml.recommendation.{ALS, ALSModel}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}\n\nimport scala.collection.Map\nimport scala.collection.mutable.ArrayBuffer\nimport scala.util.Random\n\nimport spark.implicits._",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:21.061",
+      "dateUpdated": "2018-11-28 17:58:55.147",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -158,15 +158,15 @@
       "jobName": "paragraph_1543251220516_-1526289470",
       "id": "20181126-165340_2039727148",
       "dateCreated": "2018-11-26 16:53:40.516",
-      "dateStarted": "2018-11-28 10:07:21.122",
-      "dateFinished": "2018-11-28 10:07:25.254",
+      "dateStarted": "2018-11-28 17:58:55.496",
+      "dateFinished": "2018-11-28 17:58:58.475",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Data loading\nDatasets are first loaded as `Dataset[String]`, they will be parsed later on.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:25.275",
+      "dateUpdated": "2018-11-28 17:58:58.520",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -199,15 +199,15 @@
       "jobName": "paragraph_1543251231868_-1448134904",
       "id": "20181126-165351_237880602",
       "dateCreated": "2018-11-26 16:53:51.868",
-      "dateStarted": "2018-11-28 10:07:25.473",
-      "dateFinished": "2018-11-28 10:07:25.490",
+      "dateStarted": "2018-11-28 17:58:58.618",
+      "dateFinished": "2018-11-28 17:58:58.630",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval base: String                       \u003d \"file:///zeppelin/data/recommender/\"\nval rawUserArtistData: Dataset[String] \u003d spark.read.textFile(base + \"user_artist_data.txt\").limit(LIMIT)\nval rawArtistData: Dataset[String]     \u003d spark.read.textFile(base + \"artist_data.txt\")\nval rawArtistAlias: Dataset[String]    \u003d spark.read.textFile(base + \"artist_alias.txt\")",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:25.571",
+      "dateUpdated": "2018-11-28 17:58:58.717",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -240,15 +240,15 @@
       "jobName": "paragraph_1543251284569_-1687532344",
       "id": "20181126-165444_1483705676",
       "dateCreated": "2018-11-26 16:54:44.569",
-      "dateStarted": "2018-11-28 10:07:25.664",
-      "dateFinished": "2018-11-28 10:07:27.158",
+      "dateStarted": "2018-11-28 17:58:58.776",
+      "dateFinished": "2018-11-28 17:58:59.706",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Helper functions\nThose are functions to build well-structured `Dataframe`s, broadcasted mappings and so on...",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:27.175",
+      "dateUpdated": "2018-11-28 17:58:59.790",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -281,15 +281,15 @@
       "jobName": "paragraph_1543252230033_2021862150",
       "id": "20181126-171030_361856095",
       "dateCreated": "2018-11-26 17:10:30.033",
-      "dateStarted": "2018-11-28 10:07:27.285",
-      "dateFinished": "2018-11-28 10:07:27.303",
+      "dateStarted": "2018-11-28 17:58:59.856",
+      "dateFinished": "2018-11-28 17:58:59.864",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Maps `rawArtistData` to a `DataFrame` of `[\"id\", \"name\"]`",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:27.381",
+      "dateUpdated": "2018-11-28 17:58:59.956",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -321,15 +321,15 @@
       "jobName": "paragraph_1543252468273_-521015306",
       "id": "20181126-171428_1192781020",
       "dateCreated": "2018-11-26 17:14:28.274",
-      "dateStarted": "2018-11-28 10:07:27.439",
-      "dateFinished": "2018-11-28 10:07:27.457",
+      "dateStarted": "2018-11-28 17:59:00.009",
+      "dateFinished": "2018-11-28 17:59:00.016",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Maps rawArtistData to a DataFrame of [\"id\", \"name\"].\n    *\n    * @param rawArtistData artistid artist_name\n    * @return a DataFrame of [\"id\", \"name\"]\n*/\ndef buildArtistByID(rawArtistData: Dataset[String]): DataFrame \u003d {\n    rawArtistData\n        .flatMap { line \u003d\u003e\n            val (id, name): (String, String) \u003d line.span(_ !\u003d \u0027\\t\u0027)\n            if (name.isEmpty) {\n                None\n            } else {\n                try {\n                    Some((id.toInt, name.trim))\n                } catch {\n                    case _: NumberFormatException \u003d\u003e None\n                }\n            }\n        }\n    .toDF(\"id\", \"name\")\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:27.538",
+      "dateUpdated": "2018-11-28 17:59:00.108",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -361,15 +361,15 @@
       "jobName": "paragraph_1543252477305_-420810657",
       "id": "20181126-171437_2063993704",
       "dateCreated": "2018-11-26 17:14:37.305",
-      "dateStarted": "2018-11-28 10:07:27.609",
-      "dateFinished": "2018-11-28 10:07:28.369",
+      "dateStarted": "2018-11-28 17:59:00.165",
+      "dateFinished": "2018-11-28 17:59:00.774",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Maps `rawArtistAlias` to a `Map` of `[\"badid\", \"goodid\"]`",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:28.413",
+      "dateUpdated": "2018-11-28 17:59:00.872",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -402,15 +402,15 @@
       "jobName": "paragraph_1543252494086_353605463",
       "id": "20181126-171454_1771057977",
       "dateCreated": "2018-11-26 17:14:54.086",
-      "dateStarted": "2018-11-28 10:07:28.492",
-      "dateFinished": "2018-11-28 10:07:28.499",
+      "dateStarted": "2018-11-28 17:59:00.940",
+      "dateFinished": "2018-11-28 17:59:00.948",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Maps rawArtistAlias to a Map of [\"badid\", \"goodid\"].\n    *\n    * @param rawArtistAlias badid goodid\n    * @return a mapping between artists\n*/\ndef buildArtistAlias(rawArtistAlias: Dataset[String]): Map[Int, Int] \u003d {\n    rawArtistAlias\n        .flatMap { line \u003d\u003e\n            val Array(artist, alias): Array[String] \u003d line.split(\u0027\\t\u0027)\n            if (artist.isEmpty) {\n                None\n            } else {\n                Some((artist.toInt, alias.toInt))\n            }\n        }\n        .collect\n        .toMap\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:28.592",
+      "dateUpdated": "2018-11-28 17:59:01.042",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -442,15 +442,15 @@
       "jobName": "paragraph_1543252528778_-42670970",
       "id": "20181126-171528_1330272150",
       "dateCreated": "2018-11-26 17:15:28.778",
-      "dateStarted": "2018-11-28 10:07:28.652",
-      "dateFinished": "2018-11-28 10:07:29.478",
+      "dateStarted": "2018-11-28 17:59:01.106",
+      "dateFinished": "2018-11-28 17:59:01.752",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Build counts by taking into account canonical IDs from the broadcasted mapping",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:29.557",
+      "dateUpdated": "2018-11-28 17:59:01.811",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -483,15 +483,15 @@
       "jobName": "paragraph_1543252606505_-1234351238",
       "id": "20181126-171646_1101454015",
       "dateCreated": "2018-11-26 17:16:46.505",
-      "dateStarted": "2018-11-28 10:07:29.665",
-      "dateFinished": "2018-11-28 10:07:29.676",
+      "dateStarted": "2018-11-28 17:59:01.884",
+      "dateFinished": "2018-11-28 17:59:01.899",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Build counts by taking into account canonical IDs from the broadcasted mapping.\n    *\n    * @param rawUserArtistData userid artistid playcount\n    * @param bArtistAlias broadcasted mapping between IDs\n    * @return a DataFrame of [\"user\", \"artist\", \"count\"]\n*/\ndef buildCounts(rawUserArtistData: Dataset[String],\n                bArtistAlias: Broadcast[Map[Int, Int]]): DataFrame \u003d {\n    rawUserArtistData\n        .map { line \u003d\u003e\n            val Array(userID, artistID, count): Array[Int] \u003d line.split(\u0027 \u0027).map(_.toInt)\n            val finalArtistID: Int                         \u003d bArtistAlias.value.getOrElse(artistID, artistID)\n        (userID, finalArtistID, count)\n        }\n    .toDF(\"user\", \"artist\", \"count\")\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:29.765",
+      "dateUpdated": "2018-11-28 17:59:01.983",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -523,15 +523,15 @@
       "jobName": "paragraph_1543252618429_757631475",
       "id": "20181126-171658_1010087738",
       "dateCreated": "2018-11-26 17:16:58.429",
-      "dateStarted": "2018-11-28 10:07:29.816",
-      "dateFinished": "2018-11-28 10:07:30.606",
+      "dateStarted": "2018-11-28 17:59:02.058",
+      "dateFinished": "2018-11-28 17:59:02.585",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Builds a `DataFrame` of the TOP `howMany` recommendations for user `userID`",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:30.671",
+      "dateUpdated": "2018-11-28 17:59:02.663",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -564,15 +564,15 @@
       "jobName": "paragraph_1543252626443_1109769834",
       "id": "20181126-171706_1843500540",
       "dateCreated": "2018-11-26 17:17:06.443",
-      "dateStarted": "2018-11-28 10:07:30.740",
-      "dateFinished": "2018-11-28 10:07:30.749",
+      "dateStarted": "2018-11-28 17:59:02.848",
+      "dateFinished": "2018-11-28 17:59:02.858",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Builds a DataFrame of the TOP howMany recommendations for user userID.\n    *\n    * @param model model built by the ALS method\n    * @param userID ID of the user to make recommendations\n    * @param howMany offset for the top\n    * @return a DataFrame of [\"artist\", \"prediction\"]\n*/\ndef makeRecommendations(model: ALSModel, userID: Int, howMany: Int): DataFrame \u003d {\n    val toRecommend: DataFrame \u003d\n        model.itemFactors.select($\"id\".as(\"artist\")).withColumn(\"user\", lit(userID))\n    model\n        .transform(toRecommend)\n        .select(\"artist\", \"prediction\")\n        .orderBy($\"prediction\".desc)\n        .limit(howMany)\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:30.840",
+      "dateUpdated": "2018-11-28 17:59:02.948",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -604,15 +604,15 @@
       "jobName": "paragraph_1543252636801_1313786248",
       "id": "20181126-171716_914645117",
       "dateCreated": "2018-11-26 17:17:16.801",
-      "dateStarted": "2018-11-28 10:07:30.898",
-      "dateFinished": "2018-11-28 10:07:31.493",
+      "dateStarted": "2018-11-28 17:59:03.015",
+      "dateFinished": "2018-11-28 17:59:03.493",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Evaluates the mean AUC score for a selected model",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:31.502",
+      "dateUpdated": "2018-11-28 17:59:03.522",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -645,15 +645,15 @@
       "jobName": "paragraph_1543252646807_1049922159",
       "id": "20181126-171726_1846066318",
       "dateCreated": "2018-11-26 17:17:26.808",
-      "dateStarted": "2018-11-28 10:07:31.594",
-      "dateFinished": "2018-11-28 10:07:31.619",
+      "dateStarted": "2018-11-28 17:59:03.637",
+      "dateFinished": "2018-11-28 17:59:03.651",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Evaluates the mean AUC score for a selected model.\n    *\n    * @param positiveData cross-validation set (10% of the data)\n    * @param bAllArtistIDs broadcasted array of all artist IDs\n    * @param predictFunction prediction function of the ALS model\n    * @return the mean AUC score\n*/\ndef areaUnderCurve(positiveData: DataFrame,\n                    bAllArtistIDs: Broadcast[Array[Int]],\n                    predictFunction: DataFrame \u003d\u003e DataFrame): Double \u003d {\n    val positivePredictions: DataFrame \u003d predictFunction(positiveData.select(\"user\", \"artist\"))\n        .withColumnRenamed(\"prediction\", \"positivePrediction\")\n\n    val negativeData: DataFrame \u003d positiveData\n        .select(\"user\", \"artist\")\n        .as[(Int, Int)]\n        .groupByKey { case (user, _) \u003d\u003e user }\n        .flatMapGroups {\n            case (userID, userIDAndPosArtistIDs) \u003d\u003e\n            val random: Random \u003d new Random()\n            val posItemIDSet\n                : Set[Int]                   \u003d userIDAndPosArtistIDs.map { case (_, artist) \u003d\u003e artist }.toSet\n            val negative: ArrayBuffer[Int] \u003d new ArrayBuffer[Int]()\n            val allArtistIDs: Array[Int]   \u003d bAllArtistIDs.value\n            var i: Int                     \u003d 0\n            while (i \u003c allArtistIDs.length \u0026\u0026 negative.size \u003c posItemIDSet.size) {\n                val artistID: Int \u003d allArtistIDs(random.nextInt(allArtistIDs.length))\n                if (!posItemIDSet.contains(artistID)) {\n                    negative +\u003d artistID\n                }\n                i +\u003d 1\n            }\n        negative.map(artistID \u003d\u003e (userID, artistID))\n        }\n        .toDF(\"user\", \"artist\")\n\n    val negativePredictions: DataFrame \u003d\n        predictFunction(negativeData).withColumnRenamed(\"prediction\", \"negativePrediction\")\n\n    val joinedPredictions: DataFrame \u003d positivePredictions\n        .join(negativePredictions, \"user\")\n        .select(\"user\", \"positivePrediction\", \"negativePrediction\")\n        .cache\n\n    val allCounts: DataFrame \u003d\n        joinedPredictions.groupBy(\"user\").agg(count(lit(\"1\")).as(\"total\")).select(\"user\", \"total\")\n\n    val correctCounts: DataFrame \u003d joinedPredictions\n        .filter($\"positivePrediction\" \u003e $\"negativePrediction\")\n        .groupBy(\"user\")\n        .agg(count(\"user\").as(\"correct\"))\n        .select(\"user\", \"correct\")\n\n    val meanAUC: Double \u003d allCounts\n        .join(correctCounts, Seq(\"user\"), \"left_outer\")\n        .select($\"user\", (coalesce($\"correct\", lit(0)) / $\"total\").as(\"auc\"))\n        .agg(mean(\"auc\"))\n        .as[Double]\n        .first\n\n    joinedPredictions.unpersist\n\n    meanAUC\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:31.694",
+      "dateUpdated": "2018-11-28 17:59:03.737",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -685,15 +685,15 @@
       "jobName": "paragraph_1543252664846_1817674255",
       "id": "20181126-171744_1383433228",
       "dateCreated": "2018-11-26 17:17:44.846",
-      "dateStarted": "2018-11-28 10:07:31.745",
-      "dateFinished": "2018-11-28 10:07:32.829",
+      "dateStarted": "2018-11-28 17:59:03.791",
+      "dateFinished": "2018-11-28 17:59:04.639",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Will allow to compare the mean AUC score against the AUC of predicting the most listened artists",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:32.852",
+      "dateUpdated": "2018-11-28 17:59:04.697",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -726,15 +726,15 @@
       "jobName": "paragraph_1543252672198_-383352290",
       "id": "20181126-171752_1633629648",
       "dateCreated": "2018-11-26 17:17:52.198",
-      "dateStarted": "2018-11-28 10:07:32.974",
-      "dateFinished": "2018-11-28 10:07:32.982",
+      "dateStarted": "2018-11-28 17:59:04.773",
+      "dateFinished": "2018-11-28 17:59:04.782",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\n/**\n    * Will allow to compare the mean AUC score against the AUC of predicting the most listened artists.\n    *\n    * @param train training set (90% of the data)\n    * @param allData all data\n    * @return a DataFrame of [\"user\", \"artist\", \"prediction\"]\n*/\ndef predictMostListened(train: DataFrame)(allData: DataFrame): DataFrame \u003d {\n    val listenCounts: DataFrame \u003d\n        train.groupBy(\"artist\").agg(sum(\"count\").as(\"prediction\")).select(\"artist\", \"prediction\")\n    allData.join(listenCounts, Seq(\"artist\"), \"left_outer\").select(\"user\", \"artist\", \"prediction\")\n}",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:33.073",
+      "dateUpdated": "2018-11-28 17:59:04.873",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -766,15 +766,15 @@
       "jobName": "paragraph_1543252684531_-1483319096",
       "id": "20181126-171804_1073218125",
       "dateCreated": "2018-11-26 17:18:04.531",
-      "dateStarted": "2018-11-28 10:07:33.131",
-      "dateFinished": "2018-11-28 10:07:33.743",
+      "dateStarted": "2018-11-28 17:59:04.938",
+      "dateFinished": "2018-11-28 17:59:05.340",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Preparation\nShows how to parse the raw datasets and displays some statistics.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:33.838",
+      "dateUpdated": "2018-11-28 17:59:05.342",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -807,15 +807,15 @@
       "jobName": "paragraph_1543252695389_1662119768",
       "id": "20181126-171815_1093575105",
       "dateCreated": "2018-11-26 17:18:15.389",
-      "dateStarted": "2018-11-28 10:07:33.894",
-      "dateFinished": "2018-11-28 10:07:33.909",
+      "dateStarted": "2018-11-28 17:59:05.505",
+      "dateFinished": "2018-11-28 17:59:05.512",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval userArtistDF: DataFrame \u003d rawUserArtistData.map { line \u003d\u003e\n    val Array(user, artist, _*): Array[String] \u003d line.split(\u0027 \u0027)\n    (user.toInt, artist.toInt)\n}.toDF(\"user\", \"artist\")\n\nuserArtistDF.registerTempTable(\"userArtist\")",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:33.995",
+      "dateUpdated": "2018-11-28 17:59:05.602",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -847,15 +847,15 @@
       "jobName": "paragraph_1543252725492_-83621787",
       "id": "20181126-171845_1128721500",
       "dateCreated": "2018-11-26 17:18:45.492",
-      "dateStarted": "2018-11-28 10:07:34.055",
-      "dateFinished": "2018-11-28 10:07:34.908",
+      "dateStarted": "2018-11-28 17:59:05.669",
+      "dateFinished": "2018-11-28 17:59:06.494",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Type checking\nSpark MLlib\u0027s ALS implementation is more efficient when IDs are numeric, even more so if they are `Int`.\nWe can format the data accordingly if IDs don\u0027t exceed `Int.MaxValue \u003d 2147483647`.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:34.960",
+      "dateUpdated": "2018-11-28 17:59:06.575",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -888,15 +888,15 @@
       "jobName": "paragraph_1543343069539_1625922553",
       "id": "20181127-182429_265308249",
       "dateCreated": "2018-11-27 18:24:29.539",
-      "dateStarted": "2018-11-28 10:07:35.023",
-      "dateFinished": "2018-11-28 10:07:35.036",
+      "dateStarted": "2018-11-28 17:59:06.648",
+      "dateFinished": "2018-11-28 17:59:06.659",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\nselect min(user), max(user), min(artist), max(artist) from userArtist",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:35.122",
+      "dateUpdated": "2018-11-28 17:59:06.748",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -989,7 +989,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d236"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d109"
           ],
           "interpreterSettingId": "spark"
         }
@@ -998,15 +998,15 @@
       "jobName": "paragraph_1543320187495_1646635777",
       "id": "20181127-120307_1446487674",
       "dateCreated": "2018-11-27 12:03:07.496",
-      "dateStarted": "2018-11-28 10:07:35.182",
-      "dateFinished": "2018-11-28 10:07:41.089",
+      "dateStarted": "2018-11-28 17:59:06.820",
+      "dateFinished": "2018-11-28 17:59:11.573",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval artistByID: DataFrame      \u003d buildArtistByID(rawArtistData)\nval artistAlias: Map[Int, Int] \u003d buildArtistAlias(rawArtistAlias)\n\nval (badID, goodID): (Int, Int) \u003d artistAlias.head",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:41.160",
+      "dateUpdated": "2018-11-28 17:59:11.662",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1041,7 +1041,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d237"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d110"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1050,15 +1050,15 @@
       "jobName": "paragraph_1543323576734_1632055451",
       "id": "20181127-125936_471400893",
       "dateCreated": "2018-11-27 12:59:36.735",
-      "dateStarted": "2018-11-28 10:07:41.243",
-      "dateFinished": "2018-11-28 10:07:43.483",
+      "dateStarted": "2018-11-28 17:59:11.731",
+      "dateFinished": "2018-11-28 17:59:13.166",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Example of ambiguity on artist id",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:43.564",
+      "dateUpdated": "2018-11-28 17:59:13.241",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1091,15 +1091,15 @@
       "jobName": "paragraph_1543347157804_2019196951",
       "id": "20181127-193237_298791502",
       "dateCreated": "2018-11-27 19:32:37.806",
-      "dateStarted": "2018-11-28 10:07:43.656",
-      "dateFinished": "2018-11-28 10:07:43.711",
+      "dateStarted": "2018-11-28 17:59:13.299",
+      "dateFinished": "2018-11-28 17:59:13.315",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nartistByID.filter($\"id\" isin (badID, goodID)).show",
+      "text": "%spark\nartistByID.filter($\"id\" isin (badID, goodID)).registerTempTable(\"ambiguities\")",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:43.750",
+      "dateUpdated": "2018-11-28 17:59:13.399",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1111,7 +1111,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -1122,7 +1123,75 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+-------+----------------+\n|     id|            name|\n+-------+----------------+\n|1208690|Collective Souls|\n|1003926| Collective Soul|\n+-------+----------------+\n\n"
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543342912317_-1947330790",
+      "id": "20181127-182152_1369832911",
+      "dateCreated": "2018-11-27 18:21:52.320",
+      "dateStarted": "2018-11-28 17:59:13.457",
+      "dateFinished": "2018-11-28 17:59:13.933",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from ambiguities",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 17:59:13.961",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 102.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tname\n1208690\tCollective Souls\n1003926\tCollective Soul\n"
           }
         ]
       },
@@ -1133,25 +1202,25 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d238",
-            "http://8358ef554827:4040/jobs/job?id\u003d239"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d111",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d112"
           ],
           "interpreterSettingId": "spark"
         }
       },
       "apps": [],
-      "jobName": "paragraph_1543342912317_-1947330790",
-      "id": "20181127-182152_1369832911",
-      "dateCreated": "2018-11-27 18:21:52.320",
-      "dateStarted": "2018-11-28 10:07:44.213",
-      "dateFinished": "2018-11-28 10:07:46.904",
+      "jobName": "paragraph_1543425854695_1681493566",
+      "id": "20181128-172414_981631297",
+      "dateCreated": "2018-11-28 17:24:14.695",
+      "dateStarted": "2018-11-28 17:59:14.089",
+      "dateFinished": "2018-11-28 17:59:16.048",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Model\nApproximates $$A \u003d XY^T$$ by minimizing $$|A_iY(Y^TY)^{-1}) - X_i|$$ with the Alternating Least Square (ALS) method.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:46.936",
+      "dateUpdated": "2018-11-28 17:59:16.105",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1184,15 +1253,15 @@
       "jobName": "paragraph_1543347511250_1778218783",
       "id": "20181127-193831_213710475",
       "dateCreated": "2018-11-27 19:38:31.250",
-      "dateStarted": "2018-11-28 10:07:47.008",
-      "dateFinished": "2018-11-28 10:07:47.027",
+      "dateStarted": "2018-11-28 17:59:16.167",
+      "dateFinished": "2018-11-28 17:59:16.179",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nval bArtistAlias: Broadcast[Map[Int, Int]] \u003d spark.sparkContext.broadcast(buildArtistAlias(rawArtistAlias))\nval trainData: DataFrame \u003d buildCounts(rawUserArtistData, bArtistAlias).cache",
+      "text": "%spark\nval bArtistAlias: Broadcast[Map[Int, Int]] \u003d spark.sparkContext.broadcast(buildArtistAlias(rawArtistAlias))\nval allData: DataFrame \u003d buildCounts(rawUserArtistData, bArtistAlias).cache",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:47.106",
+      "dateUpdated": "2018-11-28 17:59:16.268",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1216,7 +1285,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "bArtistAlias: org.apache.spark.broadcast.Broadcast[scala.collection.Map[Int,Int]] \u003d Broadcast(499)\ntrainData: org.apache.spark.sql.DataFrame \u003d [user: int, artist: int ... 1 more field]\n"
+            "data": "bArtistAlias: org.apache.spark.broadcast.Broadcast[scala.collection.Map[Int,Int]] \u003d Broadcast(239)\nallData: org.apache.spark.sql.DataFrame \u003d [user: int, artist: int ... 1 more field]\n"
           }
         ]
       },
@@ -1227,7 +1296,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d240"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d113"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1236,15 +1305,15 @@
       "jobName": "paragraph_1543342909986_271131691",
       "id": "20181127-182149_1611491601",
       "dateCreated": "2018-11-27 18:21:49.986",
-      "dateStarted": "2018-11-28 10:07:47.172",
-      "dateFinished": "2018-11-28 10:07:49.453",
+      "dateStarted": "2018-11-28 17:59:16.350",
+      "dateFinished": "2018-11-28 17:59:18.731",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nval model: ALSModel \u003d new ALS().setSeed(Random.nextLong()).setImplicitPrefs(true).setRank(10).setRegParam(0.01).setAlpha(1.0).setMaxIter(5).setUserCol(\"user\").setItemCol(\"artist\").setRatingCol(\"count\").setPredictionCol(\"prediction\").fit(trainData)",
+      "text": "%spark\nval model: ALSModel \u003d new ALS().setSeed(Random.nextLong()).setImplicitPrefs(true).setRank(10).setRegParam(0.01).setAlpha(1.0).setMaxIter(5).setUserCol(\"user\").setItemCol(\"artist\").setRatingCol(\"count\").setPredictionCol(\"prediction\").fit(allData)\n\nallData.unpersist",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:07:49.487",
+      "dateUpdated": "2018-11-28 17:59:18.787",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1256,7 +1325,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -1267,7 +1337,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "model: org.apache.spark.ml.recommendation.ALSModel \u003d als_42bbe9bf4ee0\n"
+            "data": "model: org.apache.spark.ml.recommendation.ALSModel \u003d als_94cf144ae7fd\nres102: allData.type \u003d [user: int, artist: int ... 1 more field]\n"
           }
         ]
       },
@@ -1278,21 +1348,21 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d241",
-            "http://8358ef554827:4040/jobs/job?id\u003d242",
-            "http://8358ef554827:4040/jobs/job?id\u003d243",
-            "http://8358ef554827:4040/jobs/job?id\u003d244",
-            "http://8358ef554827:4040/jobs/job?id\u003d245",
-            "http://8358ef554827:4040/jobs/job?id\u003d246",
-            "http://8358ef554827:4040/jobs/job?id\u003d247",
-            "http://8358ef554827:4040/jobs/job?id\u003d248",
-            "http://8358ef554827:4040/jobs/job?id\u003d249",
-            "http://8358ef554827:4040/jobs/job?id\u003d250",
-            "http://8358ef554827:4040/jobs/job?id\u003d251",
-            "http://8358ef554827:4040/jobs/job?id\u003d252",
-            "http://8358ef554827:4040/jobs/job?id\u003d253",
-            "http://8358ef554827:4040/jobs/job?id\u003d254",
-            "http://8358ef554827:4040/jobs/job?id\u003d255"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d114",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d115",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d116",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d117",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d118",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d119",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d120",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d121",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d122",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d123",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d124",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d125",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d126",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d127",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d128"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1301,15 +1371,15 @@
       "jobName": "paragraph_1543347716013_649723831",
       "id": "20181127-194156_1559790105",
       "dateCreated": "2018-11-27 19:41:56.013",
-      "dateStarted": "2018-11-28 10:07:49.573",
-      "dateFinished": "2018-11-28 10:08:00.687",
+      "dateStarted": "2018-11-28 17:59:18.859",
+      "dateFinished": "2018-11-28 17:59:28.346",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\ntrainData.unpersist",
+      "text": "%spark\nval userID: Int \u003d 1000002\nval artistByID: DataFrame \u003d buildArtistByID(rawArtistData)",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:00.762",
+      "dateUpdated": "2018-11-28 17:59:28.404",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1333,75 +1403,23 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res171: trainData.type \u003d [user: int, artist: int ... 1 more field]\n"
+            "data": "userID: Int \u003d 1000002\nartistByID: org.apache.spark.sql.DataFrame \u003d [id: int, name: string]\n"
           }
         ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1543347779722_-1892172189",
-      "id": "20181127-194259_2085035366",
-      "dateCreated": "2018-11-27 19:42:59.722",
-      "dateStarted": "2018-11-28 10:08:00.858",
-      "dateFinished": "2018-11-28 10:08:01.398",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%spark\nval userID: Int \u003d 1000002\nval existingArtistIDs: Array[Int] \u003d trainData.filter($\"user\" \u003d\u003d\u003d userID).select(\"artist\").as[Int].collect\nval artistByID: DataFrame \u003d buildArtistByID(rawArtistData)",
-      "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:01.461",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "userID: Int \u003d 1000002\nexistingArtistIDs: Array[Int] \u003d Array(1, 1000006, 1000007, 1000009, 1000010, 1000013, 1000014, 1000017, 1000024, 1000025, 1000028, 1000031, 1000033, 1000042, 1000045, 1000054, 1000055, 1000056, 1000059, 1000062, 1000088, 1000099, 1000107, 1000113, 1000123, 1000127, 1000139, 1000140, 1000157, 1000183, 1000188, 1000201, 1000210, 1000243, 1000251, 1000260, 1000265, 1000266, 1000283, 1000288, 1000289, 1000293, 1000295, 1000302, 1000305, 1000315, 1000317, 1000322, 1000323, 1000325, 1000340, 1000343, 1000382, 1000424, 1000518, 1000438, 1000440, 1000450, 1000451, 1000456, 1000457, 1000481, 1000498, 1000503, 1000515, 1000518, 1000520, 1000522, 1000569, 1000597, 1000620, 1000623, 1000625, 1000630, 1000631, 1000632, 1000639, 1000660, 1000674, 1000676, 1000677, 1000716, 1000724, 1000726, 1000727, ...artistByID: org.apache.spark.sql.DataFrame \u003d [id: int, name: string]\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d256"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1543347825232_116498480",
       "id": "20181127-194345_1500486232",
       "dateCreated": "2018-11-27 19:43:45.232",
-      "dateStarted": "2018-11-28 10:08:01.533",
-      "dateFinished": "2018-11-28 10:08:07.800",
+      "dateStarted": "2018-11-28 17:59:28.456",
+      "dateFinished": "2018-11-28 17:59:28.825",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Top 5 recommendations for user `1000002`",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:07.899",
+      "dateUpdated": "2018-11-28 17:59:28.858",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1431,110 +1449,18 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1543347906500_-824012840",
-      "id": "20181127-194506_52235910",
-      "dateCreated": "2018-11-27 19:45:06.500",
-      "dateStarted": "2018-11-28 10:08:07.976",
-      "dateFinished": "2018-11-28 10:08:07.988",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%spark\nartistByID.filter($\"id\" isin (existingArtistIDs: _*)).show",
-      "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:08.073",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+-------+--------------------+\n|     id|                name|\n+-------+--------------------+\n|1003263|             Kerrang|\n|1058612|                 YMC|\n|    658|         George Duke|\n|1141000|            Firebird|\n|1253284|        Café Del Mar|\n|1001402|            Mallrats|\n|1057426|Benny Goodman Orc...|\n|1003472|        Brian Hughes|\n|   4538|   Armand Van Helden|\n|1098856|Brant Bjork and T...|\n|   5496| Echo \u0026 the Bunnymen|\n|1004346|       Joshua Redman|\n|   1195|      Elvis Costello|\n|   3437|              Enigma|\n|   1428|        Eric Clapton|\n|    407|          Eurythmics|\n|2006683|The Mystick Krewe...|\n|1277211|The Buddy Rich Bi...|\n|1000424|      Alien Ant Farm|\n|1277408|Duke Ellington an...|\n+-------+--------------------+\nonly showing top 20 rows\n\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d257"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "apps": [],
-      "jobName": "paragraph_1543347902185_1852357437",
-      "id": "20181127-194502_1835678084",
-      "dateCreated": "2018-11-27 19:45:02.185",
-      "dateStarted": "2018-11-28 10:08:08.128",
-      "dateFinished": "2018-11-28 10:08:09.499",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n### And the associated scores",
-      "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:09.549",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eAnd the associated scores\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
       "jobName": "paragraph_1543347973969_1671977361",
       "id": "20181127-194613_525705902",
       "dateCreated": "2018-11-27 19:46:13.969",
-      "dateStarted": "2018-11-28 10:08:09.608",
-      "dateFinished": "2018-11-28 10:08:09.629",
+      "dateStarted": "2018-11-28 17:59:28.906",
+      "dateFinished": "2018-11-28 17:59:28.912",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval topRecommendations: DataFrame \u003d makeRecommendations(model, userID, 5)\ntopRecommendations.registerTempTable(\"topRecommendations\")",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:09.709",
+      "dateUpdated": "2018-11-28 17:59:29.007",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1566,15 +1492,15 @@
       "jobName": "paragraph_1543347970436_-2089213639",
       "id": "20181127-194610_1849822109",
       "dateCreated": "2018-11-27 19:46:10.436",
-      "dateStarted": "2018-11-28 10:08:09.767",
-      "dateFinished": "2018-11-28 10:08:10.570",
+      "dateStarted": "2018-11-28 17:59:29.069",
+      "dateFinished": "2018-11-28 17:59:29.533",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\nselect * from topRecommendations",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:10.574",
+      "dateUpdated": "2018-11-28 17:59:29.572",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1626,7 +1552,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "artist\tprediction\n1000881\t1.4848347\n251\t1.3333654\n1000230\t1.3219107\n4455\t1.300215\n1162\t1.2770572\n"
+            "data": "artist\tprediction\n1000881\t1.4543387\n1786\t1.4493582\n581\t1.3576965\n1825\t1.3545297\n1501\t1.3152934\n"
           }
         ]
       },
@@ -1637,8 +1563,8 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d258",
-            "http://8358ef554827:4040/jobs/job?id\u003d259"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d129",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d130"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1647,15 +1573,15 @@
       "jobName": "paragraph_1543348040870_-263972217",
       "id": "20181127-194720_1253313624",
       "dateCreated": "2018-11-27 19:47:20.870",
-      "dateStarted": "2018-11-28 10:08:10.696",
-      "dateFinished": "2018-11-28 10:08:16.607",
+      "dateStarted": "2018-11-28 17:59:29.620",
+      "dateFinished": "2018-11-28 17:59:33.457",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval recommendedArtistIDs: Array[Int] \u003d topRecommendations.select(\"artist\").as[Int].collect",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:16.670",
+      "dateUpdated": "2018-11-28 17:59:33.555",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1679,7 +1605,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "recommendedArtistIDs: Array[Int] \u003d Array(1000881, 251, 1000230, 4455, 1162)\n"
+            "data": "recommendedArtistIDs: Array[Int] \u003d Array(1000881, 1786, 581, 1825, 1501)\n"
           }
         ]
       },
@@ -1690,8 +1616,8 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d260",
-            "http://8358ef554827:4040/jobs/job?id\u003d261"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d131",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d132"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1700,15 +1626,15 @@
       "jobName": "paragraph_1543348074977_-1321659201",
       "id": "20181127-194754_1080964376",
       "dateCreated": "2018-11-27 19:47:54.977",
-      "dateStarted": "2018-11-28 10:08:16.788",
-      "dateFinished": "2018-11-28 10:08:23.042",
+      "dateStarted": "2018-11-28 17:59:33.648",
+      "dateFinished": "2018-11-28 17:59:40.333",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### And the artist names",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:23.082",
+      "dateUpdated": "2018-11-28 17:59:40.430",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1740,15 +1666,273 @@
       "jobName": "paragraph_1543348086846_-40700647",
       "id": "20181127-194806_2127255082",
       "dateCreated": "2018-11-27 19:48:06.846",
-      "dateStarted": "2018-11-28 10:08:23.159",
-      "dateFinished": "2018-11-28 10:08:23.183",
+      "dateStarted": "2018-11-28 17:59:40.492",
+      "dateFinished": "2018-11-28 17:59:40.500",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nartistByID.filter($\"id\" isin (recommendedArtistIDs: _*)).show\n\nmodel.userFactors.unpersist\nmodel.itemFactors.unpersist",
+      "text": "%spark\nartistByID.filter($\"id\" isin (recommendedArtistIDs: _*)).registerTempTable(\"topArtists\")\n\nmodel.userFactors.unpersist\nmodel.itemFactors.unpersist",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:23.259",
+      "dateUpdated": "2018-11-28 17:59:40.592",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\nres109: model.userFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\nres110: model.itemFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543348104728_164627186",
+      "id": "20181127-194824_899620112",
+      "dateCreated": "2018-11-27 19:48:24.728",
+      "dateStarted": "2018-11-28 17:59:40.665",
+      "dateFinished": "2018-11-28 17:59:41.549",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from topArtists",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 17:59:41.572",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 202.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tname\n1000881\tHoward Shore\n581\tDepeche Mode\n1786\tBob Marley\n1825\tMegadeth\n1501\tWolfgang Amadeus Mozart\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b5c878ff4450:4040/jobs/job?id\u003d133",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d134"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1543426184109_-1762995675",
+      "id": "20181128-172944_1670188118",
+      "dateCreated": "2018-11-28 17:29:44.111",
+      "dateStarted": "2018-11-28 17:59:41.659",
+      "dateFinished": "2018-11-28 17:59:44.198",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Evaluate\nRuns a grid search for tuning the hyperparameters of the ALS model.",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 17:59:44.298",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eEvaluate\u003c/h2\u003e\n\u003cp\u003eRuns a grid search for tuning the hyperparameters of the ALS model.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427196261_-2030736929",
+      "id": "20181128-174636_21061270",
+      "dateCreated": "2018-11-28 17:46:36.262",
+      "dateStarted": "2018-11-28 17:59:44.357",
+      "dateFinished": "2018-11-28 17:59:44.367",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nval Array(trainData, cvData): Array[Dataset[Row]] \u003d allData.randomSplit(Array(0.9, 0.1))\ntrainData.cache\ncvData.cache\n\nval allArtistIDs: Array[Int]             \u003d allData.select(\"artist\").as[Int].distinct.collect\nval bAllArtistIDs: Broadcast[Array[Int]] \u003d spark.sparkContext.broadcast(allArtistIDs)\n\nval mostListenedAUC: Double \u003d areaUnderCurve(cvData, bAllArtistIDs, predictMostListened(trainData))",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 17:59:44.457",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "trainData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [user: int, artist: int ... 1 more field]\ncvData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [user: int, artist: int ... 1 more field]\nres112: trainData.type \u003d [user: int, artist: int ... 1 more field]\nres113: cvData.type \u003d [user: int, artist: int ... 1 more field]\nallArtistIDs: Array[Int] \u003d Array(1, 1000006, 1000007, 1000009, 1000010, 1000013, 1000014, 1000017, 1000024, 1000025, 1000028, 1000031, 1000033, 1000042, 1000045, 1000054, 1000055, 1000056, 1000059, 1000062, 1000088, 1000099, 1000107, 1000113, 1000123, 1000127, 1000139, 1000140, 1000157, 1000183, 1000188, 1000201, 1000210, 1000243, 1000251, 1000260, 1000265, 1000266, 1000283, 1000288, 1000289, 1000293, 1000295, 1000302, 1000305, 1000315, 1000317, 1000322, 1000323, 1000325, 1000340, 1000343, 1000382, 1000424, 1000518, 1000438, 1000440, 1000450, 1000451, 1000456, 1000457, 1000481, 1000498, 1000503, 1000515, 1000520, 1000522, 1000569, 1000597, 1000620, 1000623, 1000625, 1000630, 1000631, 1000632, 1000639, 1000660, 1000674, 1000676, 1000677, 1000716, 1000724, 1000726, 1000727, 1000730, 10007...bAllArtistIDs: org.apache.spark.broadcast.Broadcast[Array[Int]] \u003d Broadcast(289)\nmostListenedAUC: Double \u003d 0.6515470998740993\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b5c878ff4450:4040/jobs/job?id\u003d135",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d136",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d137",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d138"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427219022_41322746",
+      "id": "20181128-174659_1408389998",
+      "dateCreated": "2018-11-28 17:46:59.022",
+      "dateStarted": "2018-11-28 17:59:44.521",
+      "dateFinished": "2018-11-28 18:00:01.169",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### The AUC if we recommend the most listened artists",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:01.252",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eThe AUC if we recommend the most listened artists\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427856925_1788185069",
+      "id": "20181128-175736_1916076170",
+      "dateCreated": "2018-11-28 17:57:36.925",
+      "dateStarted": "2018-11-28 18:00:01.310",
+      "dateFinished": "2018-11-28 18:00:01.316",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nprintln(\"MOST LISTENED AUC: \" + mostListenedAUC)",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:01.412",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1771,36 +1955,176 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+-------+-------------+\n|     id|         name|\n+-------+-------------+\n|    251|   Billy Idol|\n|   1162|    Van Halen|\n|1000881| Howard Shore|\n|1000230|Groove Armada|\n|   4455|  Smash Mouth|\n+-------+-------------+\n\nres180: model.userFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\nres181: model.itemFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\n"
+            "data": "MOST LISTENED AUC: 0.6515470998740993\n"
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d262",
-            "http://8358ef554827:4040/jobs/job?id\u003d263"
-          ],
-          "interpreterSettingId": "spark"
-        }
+      "apps": [],
+      "jobName": "paragraph_1543427655308_367843710",
+      "id": "20181128-175415_40689311",
+      "dateCreated": "2018-11-28 17:54:15.308",
+      "dateStarted": "2018-11-28 18:00:01.488",
+      "dateFinished": "2018-11-28 18:00:01.837",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### This step is the grid search, uncomment if you have a lot of computing power.",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:01.891",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eThis step is the grid search, uncomment if you have a lot of computing power.\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
       },
       "apps": [],
-      "jobName": "paragraph_1543348104728_164627186",
-      "id": "20181127-194824_899620112",
-      "dateCreated": "2018-11-27 19:48:24.728",
-      "dateStarted": "2018-11-28 10:08:23.318",
-      "dateFinished": "2018-11-28 10:08:26.909",
+      "jobName": "paragraph_1543427893499_-437586382",
+      "id": "20181128-175813_1974547712",
+      "dateCreated": "2018-11-28 17:58:13.499",
+      "dateStarted": "2018-11-28 18:00:01.950",
+      "dateFinished": "2018-11-28 18:00:01.955",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n/*val evaluations: Seq[(Double, (Int, Double, Double))] \u003d\n    for (rank     \u003c- Seq(5, 30);\n        regParam \u003c- Seq(1.0, 0.0001);\n        alpha    \u003c- Seq(1.0, 40.0))\n        yield {\n            val model: ALSModel \u003d new ALS().setSeed(Random.nextLong()).setImplicitPrefs(true).setRank(rank).setRegParam(regParam).setAlpha(alpha).setMaxIter(20).setUserCol(\"user\").setItemCol(\"artist\").setRatingCol(\"count\").setPredictionCol(\"prediction\").fit(trainData)\n            val auc: Double \u003d areaUnderCurve(cvData, bAllArtistIDs, model.transform)\n            \n            model.userFactors.unpersist\n            model.itemFactors.unpersist\n\n            (auc, (rank, regParam, alpha))\n        }*/",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:02.048",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427677141_1313354852",
+      "id": "20181128-175437_2003810576",
+      "dateCreated": "2018-11-28 17:54:37.142",
+      "dateStarted": "2018-11-28 18:00:02.104",
+      "dateFinished": "2018-11-28 18:00:02.225",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Sorted AUC",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:02.305",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSorted AUC\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427768613_1794462761",
+      "id": "20181128-175608_165066780",
+      "dateCreated": "2018-11-28 17:56:08.613",
+      "dateStarted": "2018-11-28 18:00:02.359",
+      "dateFinished": "2018-11-28 18:00:02.363",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n/*evaluations.sorted.reverse.foreach(println)*/\n\ntrainData.unpersist\ncvData.unpersist",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:02.460",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res120: trainData.type \u003d [user: int, artist: int ... 1 more field]\nres121: cvData.type \u003d [user: int, artist: int ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543427777376_-119610277",
+      "id": "20181128-175617_1700706512",
+      "dateCreated": "2018-11-28 17:56:17.377",
+      "dateStarted": "2018-11-28 18:00:02.522",
+      "dateFinished": "2018-11-28 18:00:02.940",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Recommend\nRecommends artists with the tuned hyperparameters of the ALS model.",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:26.957",
+      "dateUpdated": "2018-11-28 18:00:03.025",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1832,15 +2156,15 @@
       "jobName": "paragraph_1543348125989_-1343497885",
       "id": "20181127-194845_703668101",
       "dateCreated": "2018-11-27 19:48:45.989",
-      "dateStarted": "2018-11-28 10:08:27.039",
-      "dateFinished": "2018-11-28 10:08:27.049",
+      "dateStarted": "2018-11-28 18:00:03.074",
+      "dateFinished": "2018-11-28 18:00:03.083",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval model: ALSModel \u003d new ALS().setSeed(Random.nextLong()).setImplicitPrefs(true).setRank(10).setRegParam(1.0).setAlpha(40.0).setMaxIter(20).setUserCol(\"user\").setItemCol(\"artist\").setRatingCol(\"count\").setPredictionCol(\"prediction\").fit(allData)\nallData.unpersist",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:27.139",
+      "dateUpdated": "2018-11-28 18:00:03.175",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1864,7 +2188,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "model: org.apache.spark.ml.recommendation.ALSModel \u003d als_ceaf3240e14b\nres183: allData.type \u003d [user: int, artist: int ... 1 more field]\n"
+            "data": "model: org.apache.spark.ml.recommendation.ALSModel \u003d als_0a0d426b9a41\nres123: allData.type \u003d [user: int, artist: int ... 1 more field]\n"
           }
         ]
       },
@@ -1875,51 +2199,51 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d264",
-            "http://8358ef554827:4040/jobs/job?id\u003d265",
-            "http://8358ef554827:4040/jobs/job?id\u003d266",
-            "http://8358ef554827:4040/jobs/job?id\u003d267",
-            "http://8358ef554827:4040/jobs/job?id\u003d268",
-            "http://8358ef554827:4040/jobs/job?id\u003d269",
-            "http://8358ef554827:4040/jobs/job?id\u003d270",
-            "http://8358ef554827:4040/jobs/job?id\u003d271",
-            "http://8358ef554827:4040/jobs/job?id\u003d272",
-            "http://8358ef554827:4040/jobs/job?id\u003d273",
-            "http://8358ef554827:4040/jobs/job?id\u003d274",
-            "http://8358ef554827:4040/jobs/job?id\u003d275",
-            "http://8358ef554827:4040/jobs/job?id\u003d276",
-            "http://8358ef554827:4040/jobs/job?id\u003d277",
-            "http://8358ef554827:4040/jobs/job?id\u003d278",
-            "http://8358ef554827:4040/jobs/job?id\u003d279",
-            "http://8358ef554827:4040/jobs/job?id\u003d280",
-            "http://8358ef554827:4040/jobs/job?id\u003d281",
-            "http://8358ef554827:4040/jobs/job?id\u003d282",
-            "http://8358ef554827:4040/jobs/job?id\u003d283",
-            "http://8358ef554827:4040/jobs/job?id\u003d284",
-            "http://8358ef554827:4040/jobs/job?id\u003d285",
-            "http://8358ef554827:4040/jobs/job?id\u003d286",
-            "http://8358ef554827:4040/jobs/job?id\u003d287",
-            "http://8358ef554827:4040/jobs/job?id\u003d288",
-            "http://8358ef554827:4040/jobs/job?id\u003d289",
-            "http://8358ef554827:4040/jobs/job?id\u003d290",
-            "http://8358ef554827:4040/jobs/job?id\u003d291",
-            "http://8358ef554827:4040/jobs/job?id\u003d292",
-            "http://8358ef554827:4040/jobs/job?id\u003d293",
-            "http://8358ef554827:4040/jobs/job?id\u003d294",
-            "http://8358ef554827:4040/jobs/job?id\u003d295",
-            "http://8358ef554827:4040/jobs/job?id\u003d296",
-            "http://8358ef554827:4040/jobs/job?id\u003d297",
-            "http://8358ef554827:4040/jobs/job?id\u003d298",
-            "http://8358ef554827:4040/jobs/job?id\u003d299",
-            "http://8358ef554827:4040/jobs/job?id\u003d300",
-            "http://8358ef554827:4040/jobs/job?id\u003d301",
-            "http://8358ef554827:4040/jobs/job?id\u003d302",
-            "http://8358ef554827:4040/jobs/job?id\u003d303",
-            "http://8358ef554827:4040/jobs/job?id\u003d304",
-            "http://8358ef554827:4040/jobs/job?id\u003d305",
-            "http://8358ef554827:4040/jobs/job?id\u003d306",
-            "http://8358ef554827:4040/jobs/job?id\u003d307",
-            "http://8358ef554827:4040/jobs/job?id\u003d308"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d139",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d140",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d141",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d142",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d143",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d144",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d145",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d146",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d147",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d148",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d149",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d150",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d151",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d152",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d153",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d154",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d155",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d156",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d157",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d158",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d159",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d160",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d161",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d162",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d163",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d164",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d165",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d166",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d167",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d168",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d169",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d170",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d171",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d172",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d173",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d174",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d175",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d176",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d177",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d178",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d179",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d180",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d181",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d182",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d183"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1928,15 +2252,15 @@
       "jobName": "paragraph_1543343232213_1521277508",
       "id": "20181127-182712_2137662407",
       "dateCreated": "2018-11-27 18:27:12.213",
-      "dateStarted": "2018-11-28 10:08:27.190",
-      "dateFinished": "2018-11-28 10:08:54.408",
+      "dateStarted": "2018-11-28 18:00:03.237",
+      "dateFinished": "2018-11-28 18:00:22.539",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%spark\nval userID: Int                   \u003d 1000002\nval topRecommendations: DataFrame \u003d makeRecommendations(model, userID, 5)\n\nval recommendedArtistIDs: Array[Int] \u003d topRecommendations.select(\"artist\").as[Int].collect\nval artistByID: DataFrame            \u003d buildArtistByID(rawArtistData)",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:08:54.486",
+      "dateUpdated": "2018-11-28 18:00:22.562",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1960,7 +2284,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "userID: Int \u003d 1000002\ntopRecommendations: org.apache.spark.sql.DataFrame \u003d [artist: int, prediction: float]\nrecommendedArtistIDs: Array[Int] \u003d Array(1005712, 1007612, 1008193, 1005925, 1078895)\nartistByID: org.apache.spark.sql.DataFrame \u003d [id: int, name: string]\n"
+            "data": "userID: Int \u003d 1000002\ntopRecommendations: org.apache.spark.sql.DataFrame \u003d [artist: int, prediction: float]\nrecommendedArtistIDs: Array[Int] \u003d Array(1001783, 1008329, 1001479, 1250312, 1247272)\nartistByID: org.apache.spark.sql.DataFrame \u003d [id: int, name: string]\n"
           }
         ]
       },
@@ -1971,8 +2295,8 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d309",
-            "http://8358ef554827:4040/jobs/job?id\u003d310"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d184",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d185"
           ],
           "interpreterSettingId": "spark"
         }
@@ -1981,15 +2305,56 @@
       "jobName": "paragraph_1543343258129_-275829899",
       "id": "20181127-182738_1752295069",
       "dateCreated": "2018-11-27 18:27:38.130",
-      "dateStarted": "2018-11-28 10:08:54.548",
-      "dateFinished": "2018-11-28 10:09:01.318",
+      "dateStarted": "2018-11-28 18:00:22.681",
+      "dateFinished": "2018-11-28 18:00:27.287",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nprintln(\"TOP 5 BEST RECOMMENDATIONS FOR USER \" + userID + \":\")\nartistByID.join(spark.createDataset(recommendedArtistIDs).toDF(\"id\"), \"id\").select(\"name\").show\n\nmodel.userFactors.unpersist\nmodel.itemFactors.unpersist",
+      "text": "%md\n### Top 5 best recommendations for user `1000002`",
       "user": "anonymous",
-      "dateUpdated": "2018-11-28 10:09:01.357",
+      "dateUpdated": "2018-11-28 18:00:27.325",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eTop 5 best recommendations for user \u003ccode\u003e1000002\u003c/code\u003e\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543426713874_-1105807005",
+      "id": "20181128-173833_1850413221",
+      "dateCreated": "2018-11-28 17:38:33.874",
+      "dateStarted": "2018-11-28 18:00:27.405",
+      "dateFinished": "2018-11-28 18:00:27.416",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nartistByID.join(spark.createDataset(recommendedArtistIDs).toDF(\"id\"), \"id\").select(\"name\").registerTempTable(\"trueRecommendations\")\n\nmodel.userFactors.unpersist\nmodel.itemFactors.unpersist",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:27.506",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -2001,7 +2366,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -2012,7 +2378,74 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "TOP 5 BEST RECOMMENDATIONS FOR USER 1000002:\n+--------------------+\n|                name|\n+--------------------+\n|      Mediæval Bæbes|\n|          Dave Grohl|\n|Big Bad Voodoo Daddy|\n|          Bill Cosby|\n|              Tiamat|\n+--------------------+\n\nres188: model.userFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\nres189: model.itemFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\n"
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\nres127: model.userFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\nres128: model.itemFactors.type \u003d [id: int, features: array\u003cfloat\u003e]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1543343327376_2037615983",
+      "id": "20181127-182847_1238162341",
+      "dateCreated": "2018-11-27 18:28:47.376",
+      "dateStarted": "2018-11-28 18:00:27.563",
+      "dateFinished": "2018-11-28 18:00:28.247",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from trueRecommendations",
+      "user": "anonymous",
+      "dateUpdated": "2018-11-28 18:00:28.267",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 196.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\n植松伸夫\nBasil Poledouris\nNeil Young \u0026 Crazy Horse\nRen \u0026 Stimpy\nCombustible Edison\n"
           }
         ]
       },
@@ -2023,19 +2456,19 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://8358ef554827:4040/jobs/job?id\u003d311",
-            "http://8358ef554827:4040/jobs/job?id\u003d312",
-            "http://8358ef554827:4040/jobs/job?id\u003d313"
+            "http://b5c878ff4450:4040/jobs/job?id\u003d186",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d187",
+            "http://b5c878ff4450:4040/jobs/job?id\u003d188"
           ],
           "interpreterSettingId": "spark"
         }
       },
       "apps": [],
-      "jobName": "paragraph_1543343327376_2037615983",
-      "id": "20181127-182847_1238162341",
-      "dateCreated": "2018-11-27 18:28:47.376",
-      "dateStarted": "2018-11-28 10:09:01.437",
-      "dateFinished": "2018-11-28 10:09:04.798",
+      "jobName": "paragraph_1543426670323_438663652",
+      "id": "20181128-173750_991045332",
+      "dateCreated": "2018-11-28 17:37:50.323",
+      "dateStarted": "2018-11-28 18:00:28.359",
+      "dateFinished": "2018-11-28 18:00:30.374",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     }

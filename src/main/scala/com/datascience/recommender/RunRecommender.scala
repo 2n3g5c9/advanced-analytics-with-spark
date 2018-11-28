@@ -113,15 +113,9 @@ class RunRecommender(private val spark: SparkSession) {
 
     val userID: Int = 2093760
 
-    val existingArtistIDs: Array[Int] =
-      trainData.filter($"user" === userID).select("artist").as[Int].collect
-
     val artistByID: DataFrame = buildArtistByID(rawArtistData)
 
     println("TOP 5 RECOMMENDATIONS FOR USER " + userID + ":")
-    artistByID.filter($"id" isin (existingArtistIDs: _*)).show
-
-    println("AND THE ASSOCIATED PREDICTION SCORES:")
     val topRecommendations: DataFrame = makeRecommendations(model, userID, 5)
     topRecommendations.show
 

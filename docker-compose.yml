@@ -1,0 +1,13 @@
+version: "3"
+services:
+  zeppelin:
+    image: zeppelin-fixed:0.8.0
+    volumes:
+      - $PWD/zeppelin/conf:/zeppelin/conf
+      - $PWD/zeppelin/logs:/zeppelin/logs
+      - $PWD/zeppelin/notebook:/zeppelin/notebook
+      - $PWD/data:/zeppelin/data
+    ports:
+      - 4040:4040
+      - 8080:8080
+    container_name: advanced-analytics-with-spark

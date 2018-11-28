@@ -7,3 +7,6 @@ target/
 
 # Workspace configuration
 .idea/
+
+# MacOS specific files
+.DS_Store

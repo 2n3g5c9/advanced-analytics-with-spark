@@ -54,9 +54,9 @@ class RunRecommender(private val spark: SparkSession) {
     * Spark MLlib's ALS implementation is more efficient when IDs are numeric, even more so if they are `Int`.
     * We can format the data accordingly if IDs don't exceed `Int.MaxValue = 2147483647`.
     *
-    * @param rawUserArtistData: userid artistid playcount
-    * @param rawArtistData: artistid artist_name
-    * @param rawArtistAlias: badid goodid
+    * @param rawUserArtistData userid artistid playcount
+    * @param rawArtistData artistid artist_name
+    * @param rawArtistAlias badid goodid
     */
   def preparation(rawUserArtistData: Dataset[String],
                   rawArtistData: Dataset[String],
@@ -80,11 +80,12 @@ class RunRecommender(private val spark: SparkSession) {
   }
 
   /**
-    * Approximates A = XYt by minimizing |A_iY(YtY)**(-1) - X_i| with the Alternating Least Square (ALS) method.
+    * Approximates A = XY^T^ by minimizing |A,,i,,Y(Y^T^Y)^-1^) - X,,i,,| with the Alternating Least Square (ALS)
+    * method.
     *
-    * @param rawUserArtistData: userid artistid playcount
-    * @param rawArtistData: artistid artist_name
-    * @param rawArtistAlias: badid goodid
+    * @param rawUserArtistData userid artistid playcount
+    * @param rawArtistData artistid artist_name
+    * @param rawArtistAlias badid goodid
     */
   def model(rawUserArtistData: Dataset[String],
             rawArtistData: Dataset[String],
@@ -136,8 +137,8 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Runs a grid search for tuning the hyperparameters of the ALS model.
     *
-    * @param rawUserArtistData: userid artistid playcount
-    * @param rawArtistAlias: badid goodid
+    * @param rawUserArtistData userid artistid playcount
+    * @param rawArtistAlias badid goodid
     */
   def evaluate(rawUserArtistData: Dataset[String], rawArtistAlias: Dataset[String]): Unit = {
     val bArtistAlias: Broadcast[Map[Int, Int]] =
@@ -191,9 +192,9 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Recommends artists with the tuned hyperparameters of the ALS model.
     *
-    * @param rawUserArtistData: userid artistid playcount
-    * @param rawArtistData: artistid artist_name
-    * @param rawArtistAlias: badid goodid
+    * @param rawUserArtistData userid artistid playcount
+    * @param rawArtistData artistid artist_name
+    * @param rawArtistAlias badid goodid
     */
   def recommend(rawUserArtistData: Dataset[String],
                 rawArtistData: Dataset[String],
@@ -235,7 +236,7 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Maps rawArtistData to a DataFrame of ["id", "name"].
     *
-    * @param rawArtistData: artistid artist_name
+    * @param rawArtistData artistid artist_name
     * @return a DataFrame of ["id", "name"]
     */
   def buildArtistByID(rawArtistData: Dataset[String]): DataFrame = {
@@ -258,7 +259,7 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Maps rawArtistAlias to a Map of ["badid", "goodid"].
     *
-    * @param rawArtistAlias: badid goodid
+    * @param rawArtistAlias badid goodid
     * @return a mapping between artists
     */
   def buildArtistAlias(rawArtistAlias: Dataset[String]): Map[Int, Int] = {
@@ -278,8 +279,8 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Build counts by taking into account canonical IDs from the broadcasted mapping.
     *
-    * @param rawUserArtistData: userid artistid playcount
-    * @param bArtistAlias: broadcasted mapping between IDs
+    * @param rawUserArtistData userid artistid playcount
+    * @param bArtistAlias broadcasted mapping between IDs
     * @return a DataFrame of ["user", "artist", "count"]
     */
   def buildCounts(rawUserArtistData: Dataset[String],
@@ -296,9 +297,9 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Builds a DataFrame of the TOP howMany recommendations for user userID.
     *
-    * @param model: model built by the ALS method
-    * @param userID: ID of the user to make recommendations
-    * @param howMany: offset for the top
+    * @param model model built by the ALS method
+    * @param userID ID of the user to make recommendations
+    * @param howMany offset for the top
     * @return a DataFrame of ["artist", "prediction"]
     */
   def makeRecommendations(model: ALSModel, userID: Int, howMany: Int): DataFrame = {
@@ -314,9 +315,9 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Evaluates the mean AUC score for a selected model.
     *
-    * @param positiveData: cross-validation set (10% of the data)
-    * @param bAllArtistIDs: broadcasted array of all artist IDs
-    * @param predictFunction: prediction function of the ALS model
+    * @param positiveData cross-validation set (10% of the data)
+    * @param bAllArtistIDs broadcasted array of all artist IDs
+    * @param predictFunction prediction function of the ALS model
     * @return the mean AUC score
     */
   def areaUnderCurve(positiveData: DataFrame,
@@ -380,8 +381,8 @@ class RunRecommender(private val spark: SparkSession) {
   /**
     * Will allow to compare the mean AUC score against the AUC of predicting the most listened artists.
     *
-    * @param train: training set (90% of the data)
-    * @param allData: all data
+    * @param train training set (90% of the data)
+    * @param allData all data
     * @return a DataFrame of ["user", "artist", "prediction"]
     */
   def predictMostListened(train: DataFrame)(allData: DataFrame): DataFrame = {

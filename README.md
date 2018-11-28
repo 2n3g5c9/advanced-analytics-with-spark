@@ -60,11 +60,33 @@ You can also package the project in a JAR file at the root:
 sbt package
 ```
 
+## Apache Zeppelin notebooks
+
+The case studies are also discussed in Apache Zeppelin notebooks.
+
+First, build the fixed docker image for Apache Zeppelin at the root (this will take while):
+````bash
+./zeppelin-build.sh
+````
+
+Then, simply start a container:
+````bash
+docker-compose up -d
+````
+
+Remember that the data must be downloaded to run the notebooks.
+
+To stop and remove the container, simply run:
+````bash
+docker-compose down
+````
+
 ## Tech/frameworks used
 
 - [Apache Spark](https://spark.apache.org/): Unified analytics engine for large-scale data processing.
 - [Scala](https://www.scala-lang.org/): Combination of object-oriented and functional programming in one concise, high-level language on the JVM.
 - [SBT](https://www.scala-sbt.org/): Interactive build tool for Scala.
+- [Apache Zeppelin](https://zeppelin.apache.org/): Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more.
 
 ## License
 

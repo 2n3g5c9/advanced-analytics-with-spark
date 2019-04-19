@@ -1,7 +1,7 @@
 version: "3"
 services:
   zeppelin:
-    image: zeppelin-fixed:0.8.0
+    image: apache/zeppelin:0.8.1
     volumes:
       - $PWD/zeppelin/conf:/zeppelin/conf
       - $PWD/zeppelin/logs:/zeppelin/logs

@@ -163,6 +163,26 @@
       "name": "sap",
       "group": "sap",
       "properties": {
+        "universe.queryTimeout": {
+          "name": "universe.queryTimeout",
+          "value": "7200000",
+          "type": "number"
+        },
+        "universe.concurrent.use": {
+          "name": "universe.concurrent.use",
+          "value": true,
+          "type": "checkbox"
+        },
+        "universe.password": {
+          "name": "universe.password",
+          "value": "",
+          "type": "password"
+        },
+        "universe.interpolation": {
+          "name": "universe.interpolation",
+          "value": false,
+          "type": "checkbox"
+        },
         "universe.api.url": {
           "name": "universe.api.url",
           "value": "http://localhost:6405/biprws",
@@ -173,15 +193,15 @@
           "value": "secEnterprise",
           "type": "string"
         },
+        "universe.concurrent.maxConnection": {
+          "name": "universe.concurrent.maxConnection",
+          "value": "10",
+          "type": "number"
+        },
         "universe.user": {
           "name": "universe.user",
           "value": "",
           "type": "string"
-        },
-        "universe.password": {
-          "name": "universe.password",
-          "value": "",
-          "type": "password"
         }
       },
       "status": "READY",
@@ -193,7 +213,7 @@
           "editor": {
             "editOnDblClick": false,
             "completionKey": "TAB",
-            "completionSupport": true
+            "completionSupport": false
           }
         }
       ],
@@ -291,6 +311,16 @@
           "name": "zeppelin.jdbc.interpolation",
           "value": false,
           "type": "checkbox"
+        },
+        "zeppelin.jdbc.maxConnLifetime": {
+          "name": "zeppelin.jdbc.maxConnLifetime",
+          "value": "-1",
+          "type": "number"
+        },
+        "zeppelin.jdbc.maxRows": {
+          "name": "zeppelin.jdbc.maxRows",
+          "value": "1000",
+          "type": "number"
         }
       },
       "status": "READY",
@@ -1090,16 +1120,6 @@
       "name": "spark",
       "group": "spark",
       "properties": {
-        "spark.executor.memory": {
-          "name": "spark.executor.memory",
-          "value": "",
-          "type": "string"
-        },
-        "zeppelin.spark.sql.interpolation": {
-          "name": "zeppelin.spark.sql.interpolation",
-          "value": false,
-          "type": "checkbox"
-        },
         "zeppelin.spark.concurrentSQL": {
           "name": "zeppelin.spark.concurrentSQL",
           "value": false,
@@ -1113,11 +1133,6 @@
         "zeppelin.R.cmd": {
           "name": "zeppelin.R.cmd",
           "value": "R",
-          "type": "string"
-        },
-        "spark.app.name": {
-          "name": "spark.app.name",
-          "value": "Zeppelin",
           "type": "string"
         },
         "zeppelin.R.image.width": {
@@ -1135,10 +1150,55 @@
           "value": "spark-packages,http://dl.bintray.com/spark-packages/maven,false;",
           "type": "textarea"
         },
+        "zeppelin.dep.localrepo": {
+          "name": "zeppelin.dep.localrepo",
+          "value": "local-repo",
+          "type": "string"
+        },
+        "zeppelin.spark.sql.stacktrace": {
+          "name": "zeppelin.spark.sql.stacktrace",
+          "value": false,
+          "type": "checkbox"
+        },
+        "zeppelin.spark.useHiveContext": {
+          "name": "zeppelin.spark.useHiveContext",
+          "value": true,
+          "type": "checkbox"
+        },
+        "zeppelin.spark.printREPLOutput": {
+          "name": "zeppelin.spark.printREPLOutput",
+          "value": true,
+          "type": "checkbox"
+        },
+        "spark.cores.max": {
+          "name": "spark.cores.max",
+          "value": "",
+          "type": "number"
+        },
+        "spark.executor.memory": {
+          "name": "spark.executor.memory",
+          "value": "",
+          "type": "string"
+        },
+        "zeppelin.spark.sql.interpolation": {
+          "name": "zeppelin.spark.sql.interpolation",
+          "value": false,
+          "type": "checkbox"
+        },
+        "spark.app.name": {
+          "name": "spark.app.name",
+          "value": "Zeppelin",
+          "type": "string"
+        },
         "zeppelin.spark.maxResult": {
           "name": "zeppelin.spark.maxResult",
           "value": "1000",
           "type": "number"
+        },
+        "zeppelin.spark.ui.hidden": {
+          "name": "zeppelin.spark.ui.hidden",
+          "value": false,
+          "type": "checkbox"
         },
         "master": {
           "name": "master",
@@ -1165,23 +1225,8 @@
           "value": true,
           "type": "checkbox"
         },
-        "zeppelin.dep.localrepo": {
-          "name": "zeppelin.dep.localrepo",
-          "value": "local-repo",
-          "type": "string"
-        },
         "zeppelin.pyspark.useIPython": {
           "name": "zeppelin.pyspark.useIPython",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.sql.stacktrace": {
-          "name": "zeppelin.spark.sql.stacktrace",
-          "value": false,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.useHiveContext": {
-          "name": "zeppelin.spark.useHiveContext",
           "value": true,
           "type": "checkbox"
         },
@@ -1199,16 +1244,6 @@
           "name": "zeppelin.R.render.options",
           "value": "out.format \u003d \u0027html\u0027, comment \u003d NA, echo \u003d FALSE, results \u003d \u0027asis\u0027, message \u003d F, warning \u003d F, fig.retina \u003d 2",
           "type": "textarea"
-        },
-        "zeppelin.spark.printREPLOutput": {
-          "name": "zeppelin.spark.printREPLOutput",
-          "value": true,
-          "type": "checkbox"
-        },
-        "spark.cores.max": {
-          "name": "spark.cores.max",
-          "value": "",
-          "type": "number"
         }
       },
       "status": "READY",

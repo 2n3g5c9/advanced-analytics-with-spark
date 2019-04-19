@@ -17,10 +17,6 @@
   <a href="https://codeclimate.com/github/2n3g5c9/advanced-analytics-with-spark/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/90d0d67a63d5e805693f/maintainability" />
   </a>
-  <!-- Test Coverage Status -->
-  <a href="https://codeclimate.com/github/2n3g5c9/advanced-analytics-with-spark/test_coverage">
-    <img src="https://api.codeclimate.com/v1/badges/90d0d67a63d5e805693f/test_coverage" />
-  </a>
 </div>
 
 ## Code quick access
@@ -72,13 +68,7 @@ sbt package
 
 The case studies are also discussed in Apache Zeppelin notebooks.
 
-First, build the fixed docker image for Apache Zeppelin at the root (this will take a while):
-
-```bash
-./zeppelin-build.sh
-```
-
-Then, simply start a container:
+Simply start a container:
 
 ```bash
 docker-compose up -d

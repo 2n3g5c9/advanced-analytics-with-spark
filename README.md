@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="512" src="https://raw.githubusercontent.com/2n3g5c9/advanced-analytics-with-spark/master/img/advanced-analytics-with-spark_banner.png" alt="advanced-analytics-with-spark">
+  <img width="512" src="https://raw.githubusercontent.com/2n3g5c9/advanced-analytics-with-spark/master/img/banner.png" alt="advanced-analytics-with-spark">
 </div>
 
 <br />
@@ -23,11 +23,13 @@
 
 [Chapter 3 - Recommending Music and the Audioscrobbler Data Set](https://github.com/2n3g5c9/advanced-analytics-with-spark/tree/master/src/main/scala/com/datascience/recommender)
 
+[Chapter 4 - Predicting Forest Cover with Decision Trees](https://github.com/2n3g5c9/advanced-analytics-with-spark/tree/master/src/main/scala/com/datascience/rdf)
+
 ## Getting started
 
 ### Prerequisites
 
-Everything is written in Scala code so make sure you have a flavor of **JDK 8** installed as well as **[Scala 2.12](https://www.scala-lang.org/)** (compatible with Apache Spark >2.4) and **[SBT](https://www.scala-sbt.org/)**.
+Everything is written in Scala code so make sure you have a flavor of **JDK 8** installed as well as **[Scala 2.11](https://www.scala-lang.org/)** and **[SBT](https://www.scala-sbt.org/)**.
 
 ### Installation
 

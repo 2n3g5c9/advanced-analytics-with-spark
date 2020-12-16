@@ -2,7 +2,7 @@ name := "advanced-analytics-with-spark"
 
 version := "0.1"
 
-scalaVersion := "2.12.7"
+scalaVersion := "2.11.12"
 
 val SPARK_VERSION = "2.4.0"
 

@@ -2,11 +2,17 @@
   <img width="512" src="https://raw.githubusercontent.com/2n3g5c9/advanced-analytics-with-spark/master/img/banner.png" alt="advanced-analytics-with-spark">
 </div>
 
-<br />
-
-<div align="center">Unofficial DataFrame-oriented solutions to case studies in "Advanced Analytics with Spark" published by O'Reilly</div>
-
-<br />
+<p align="center">
+    <a href="#-code-quick-access">Code quick access</a>
+    &nbsp; • &nbsp;
+    <a href="#-getting-started">Getting started</a>
+    &nbsp; • &nbsp;
+    <a href="#-apache-zeppelin-notebooks">Apache Zeppelin notebooks</a>
+    &nbsp; • &nbsp;
+    <a href="#-techframeworks-used">Tech/frameworks used</a>
+    &nbsp; • &nbsp;
+    <a href="#-license">License</a>
+</p>
 
 <div align="center">
   <!-- Build Status -->
@@ -19,13 +25,13 @@
   </a>
 </div>
 
-## Code quick access
+## 🚀 Code quick access
 
 [Chapter 3 - Recommending Music and the Audioscrobbler Data Set](https://github.com/2n3g5c9/advanced-analytics-with-spark/tree/master/src/main/scala/com/datascience/recommender)
 
 [Chapter 4 - Predicting Forest Cover with Decision Trees](https://github.com/2n3g5c9/advanced-analytics-with-spark/tree/master/src/main/scala/com/datascience/rdf)
 
-## Getting started
+## 🏁 Getting started
 
 ### Prerequisites
 
@@ -66,7 +72,7 @@ You can also package the project in a JAR file at the root:
 sbt package
 ```
 
-## Apache Zeppelin notebooks
+## 📓 Apache Zeppelin notebooks
 
 The case studies are also discussed in Apache Zeppelin notebooks.
 
@@ -84,13 +90,13 @@ To stop and remove the container, simply run:
 docker-compose down
 ```
 
-## Tech/frameworks used
+## 🪄 Tech/frameworks used
 
 - [Apache Spark](https://spark.apache.org/): Unified analytics engine for large-scale data processing.
 - [Scala](https://www.scala-lang.org/): Combination of object-oriented and functional programming in one concise, high-level language on the JVM.
 - [SBT](https://www.scala-sbt.org/): Interactive build tool for Scala.
 - [Apache Zeppelin](https://zeppelin.apache.org/): Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more.
 
-## License
+## 📃 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
